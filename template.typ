@@ -8,6 +8,7 @@
     + 添加中文环境
     + 修改封面布局
     + 添加必要字体
+    + 添加首行缩进控制开关
 */
 
 #let template(
@@ -42,6 +43,9 @@
   cover-image: none,
   background-color: none,
 
+  first-line-indent: false,
+  list-indent: 0em,
+  enum-indent: 0em,
   body
 ) = {
 
@@ -144,13 +148,13 @@ header: context {
     })
 
   // 配置列表
-  set list(tight: true, indent: 2em)
+  set list(tight: true, indent: list-indent)
   show list: it => [
     #set text(top-edge: "ascender")
     #it
   ]
 
-  set enum(tight: true, indent: 2em)
+  set enum(tight: true, indent: enum-indent)
   show enum: it => [
     #set text(top-edge: "ascender")
     #it
@@ -311,7 +315,7 @@ header: context {
   v(24pt, weak: true)
 
   // 将段落设置为两端对齐，并设置换行。
-  set par(justify: true, linebreaks: "optimized", first-line-indent:2em, leading: 0.8em)
+  set par(justify: true, linebreaks: "optimized", first-line-indent: if first-line-indent { 2em } else { 0em }, leading: 0.8em)
 
   pagebreak()
 
