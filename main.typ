@@ -37,9 +37,9 @@
   // 中英文文本和代码的字体
   fonts: (
     (
-      en-font: "Linux Libertine",
+      en-font: "Times New Roman",
       zh-font: "Noto Sans CJK SC",
-      code-font: "DejaVu Sans Mono",
+      code-font: "Monaco",
     )
   ),
   
@@ -48,7 +48,7 @@
   // 封面背景图片（选填图片路径或 none）
   cover-image: "./figures/cover-image.png",
   // 正文背景颜色（选填 HEX 颜色或 none）
-  background-color: "#FAF9DE"
+  background-color: none
 )
 
 #include "content/chapter1.typ"

@@ -114,18 +114,17 @@ header: context {
       chapter-title = elems.first().body
     }
 
-    let head-title = text()[
-      #if short-title != none {
-        short-title
-      } else {
-        title
-      }
-    ]
-
-    if calc.even(here().page()) == true {
-      emph(chapter-title) + h(1fr) + emph(head-title)
+    let head-title = if short-title != none {
+      short-title
     } else {
-      emph(head-title) + h(1fr) + emph(chapter-title)
+      title
+    }
+
+    set text(font: ("Times New Roman", "KaiTi_GB2312"), style: "normal")
+    if calc.even(here().page()) == true {
+      chapter-title + h(1fr) + head-title
+    } else {
+      head-title + h(1fr) + chapter-title
     }
 
     v(-8pt)

@@ -1,0 +1,11 @@
+# Typst output
+*.pdf
+
+# Typst cache
+.cache/
+
+# Editor & OS
+.DS_Store
+*.swp
+*.swo
+*~
